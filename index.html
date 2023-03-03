@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <title>Frontend Mentor | Tip calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="logo">
+    <img src="images/logo.svg" alt="">
+  </div>
+  
+  <div class="container">
+     <div class="first-container">
+      <div class="error">
+        <p class="bill-txt">
+          Bill
+        </p>
+        <div class="wrong1">
+          Cant be zero...
+        </div>
+      </div>
+       
+
+        
+        <div class="bill-num">
+            <input id="bill" class="num"  type="number" name="num" placeholder="0" required></input>
+        </div>
+        
+      
+        <div class="num-div">
+          <p class="select-txt">
+            Select Tip %
+          </p>
+          <div class="num-percent">
+              <div class="tips" onclick="changeColor(this)">
+                5% 
+              </div>
+              <div class="tips"  onclick="changeColor(this)">
+                10% 
+              </div>
+              <div class="tips"  onclick="changeColor(this)">
+                15% 
+              </div>
+              <div class="tips" onclick="changeColor(this)" id="twenty-five">
+                25%
+              </div>
+              <div class="tips" onclick="changeColor(this)">
+               50% 
+              </div>
+              <div class="custom" id="custom">
+                <input id="custom-input" class="custom-input"  type="number" name="custom" placeholder="Custom" required></input>
+              </div>
+          </div>
+        </div>
+        <div class="num-person">
+          <div class="error">
+            <p class="number-txt">
+              Number of People
+            </p>
+            <div class="wrong2">
+              Cant be zero...
+            </div>
+          </div>
+        
+
+          <div class="num-person-container">
+            <input id="number-of-people" class="number-of-people"  type="number" name="num" placeholder="0" required></input>
+          </div>
+          
+          </div>
+
+     </div>
+
+     <div class="last-container">
+        <div class="amount">
+          <div class="amont-culumn">
+            <h1 class="amount-txt">
+              Tip Amount
+            </h1>
+            <p class="person">
+              / person
+            </p>
+          </div>
+          <div id="tip-amount" class="tip-amount">
+          
+              $0.00
+           
+          </div>
+        </div>
+
+        <div class="total">
+          <div>
+            <h1 class="total-txt">
+              Total
+            </h1>
+            <p class="person">
+              / person
+            </p>
+          </div>
+          <div id="total" class="num-total">
+           
+              $0.00
+           
+          </div>
+        </div>
+
+        <div class="reset" onclick="myReset()" id="reset">
+          Reset
+        </div>
+     </div>
+
+
+  </div>
+  <script src="calculator.js"></script>
+  
+  
+</body>
+</html>

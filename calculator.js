@@ -9,11 +9,9 @@ const tips = Array.from(document.querySelectorAll(".tips"));
 const custom = document.getElementById("custom-input");
 const wrong1 = document.querySelector(".wrong1");
 const wrong2 = document.querySelector(".wrong2");
-
+var clicked = false;
 
 let percentStr;
-
-
 
 function changeColor(elem) {
   checkInput();
@@ -21,12 +19,14 @@ function changeColor(elem) {
   tips.forEach((el) => {
     el.style.background = "var(--green";
     el.style.color = "white";
+    clicked = true;
   });
   elem.style.background ="var(--cyan)";
   elem.style.color = "var(--green)";  
   percentStr = elem.textContent;
   
   let percent = parseInt(percentStr);
+
   fullAmount(percent);
 };
 
@@ -38,6 +38,7 @@ function changeColor(elem) {
     tips.forEach((el) => {el.style.background = "var(--green";
     el.style.color = "white";
     });
+  
 
     let percent = Number(percentStr);
     fullAmount(percent);
@@ -72,8 +73,12 @@ function fullAmount(percent){
   let totalAmount = (bill.value / people_number.value) + tipAmount;
  
 
-  tip_Amount.textContent = "$" + tipAmount.toFixed(2).toString();
-  total.textContent = "$" + totalAmount.toFixed(2).toString();
+  if(Number(bill.value) > 0 && Number(people_number.value) > 0 && clicked == true){
+    tip_Amount.textContent = "$" + tipAmount.toFixed(2);
+    total.textContent = "$" + totalAmount.toFixed(2);
+  }
+
+
 }
 
 function checkInput() {
